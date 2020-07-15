@@ -1,0 +1,95 @@
+<!Doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+
+  <link rel="stylesheet" href="styles.css">
+  <!--Importing scripts-->
+  <script src="tools.js"></script>
+  <script src="fetch.js"></script>
+  <script src="getLocation.js"></script>
+  <script src="loadHos.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <title>Norwich Travel</title>
+</head>
+<!--Bootstrap Navbar-->
+<!--Nav bar is used mostly as cosmetic-->
+<body data-spy="scroll" data-target=".navbar" data-offset="50">
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="200">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <!--Link takees user to main page-->
+        <a class="navbar-brand" href="index.html">Norwich Travel</a>
+      </div>
+      <div>
+        <!--Add links to the navigation bar-->
+        <div class="collapse navbar-collapse" id="myNavbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Bus</a>
+            </li>
+            <li>
+              <a href="trains.html">Trains</a>
+            </li>
+            <li>
+              <a href="taxi.html">Taxis</a>
+            </li>
+            <li>
+              <a href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  <br/>
+  <form>
+    <div class="form-group">
+      <label>Stops available</label>
+      <select class="form-control" id="select">
+        <!--ID's taken from Json -->
+        <option value="2900N12286">University of East Anglia (Stop A)</option>
+        <option value="2900N12913">University of East Anglia (Stop B)</option>
+        <option value="2900N12287">University of East Anglia (Stop C)</option>
+        <option value="2900C237">Norwich Hospital (Stand A)</option>
+        <option value="2900C238">Norwich Hospital (Stand B)</option>
+        <option value="2900N12216">Railway Station (Stop DE)</option>
+        <option value="2900N124">Railway Station (Stop DF)</option>
+        <option value="2900N12218">Railway Station (Stop DD)</option>
+      </select>
+    </div>
+  </form>
+  <!--When clicked, clears and opens the next section button for bus availability-->
+  <div class="contentBox"> 
+    <a class="lnr" onclick ="clearBox();loadBus();" href="#">    
+    <img src="search.PNG" /></a>
+  </div>
+  <button class="lnr" onclick="window.location.reload()">Clear</button>
+
+
+  <!--Load bus stops + buses-->
+  <p id="stop_name"></p>
+
+  <div class="container" id="businfo"></div>
+
+  <div id="businfo2"></div>
+
+  <div class="container-fluid" id="businfo3"></div>
+
+
+</body>
+
+</html>

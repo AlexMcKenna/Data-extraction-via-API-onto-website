@@ -1,0 +1,85 @@
+<!Doctype html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=yes"/>
+
+  <!-- importing scripts for use of access -->
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="getLocation.js"></script>
+  <script src="fetchTrains.js"></script>
+  <script src="tools.js"></script>
+
+  <!-- Bootstrap for better CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Latest compiled JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Norwich Travel</title>
+</head>
+<!--bootstrap navigation bar-->
+<body data-spy="scroll" data-target=".navbar" data-offset="50" onload="toggle_visibility()">
+  <nav class="navbar navbar-inverse" data-spy="affix" data-offset-top="200">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#Navbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <a class="navbar-brand" href="index.html">Norwich Travel</a>
+      </div>
+      <div>
+        <div class="collapse navbar-collapse" id="Navbar">
+          <ul class="nav navbar-nav">
+            <li>
+              <a href="index.html">Bus</a>
+            </li>
+            <li>
+              <a href="trains.html">Train</a>
+            </li>
+            <li>
+              <a href="taxi.html">Taxi</a>
+            </li>
+            <li>
+              <a href="feedback.html">Feedback</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </nav>
+
+  </br>
+  <h1>Why not add some feedback?</h1>
+  <div id="feedback-main">
+    <div id="feedback-div">
+
+      <form action="contact.php" method="post" class="form" id="feedback-form1" name="form1" enctype="multipart/form-data">
+        <h3>Name</h3>
+        <p class="name">
+          <input name="name" type="name" class="validate[required,custom[onlyLetter],length[0,100]] feedback-input" required placeholder="Name" id="  feedback-name" />
+        </p>
+        <h3>Email</h3>
+        <p class="email">
+          <input name="email" type="email" class="validate[required,custom[email]] feedback-input" id="feedback-email" placeholder="Email" required />
+        </p>
+        <h3>Add a comment</h3>
+        <p class="text">
+          <textarea name="comment" type="comment" class="validate[required,length[6,300]] feedback-input" id="feedback-comment" required placeholder="Comment..."></textarea>
+        </p>
+  
+        <div class="feedback-submit">
+          <input type="submit" value="SEND" id="feedback-button-blue"/>
+          <div class="feedback-ease"></div>
+        </div>
+      </form>
+    </div>
+  </div>
+      
+  <button id="popup" class="feedback-button" onclick="toggle_visibility()">Feedback</button>
+  <script src="_include/js/feedback.js"></script>
+
+</body>
+</html>
